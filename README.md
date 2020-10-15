@@ -12,8 +12,4 @@ Tech Stack:
 * VSCode 
 * MongoDB 
   * Djongo 
-<<<<<<< HEAD
   * Compass
-=======
-  * Compass
->>>>>>> 7eee40a46f11426bb9fc8efec350c61f4d0c8a90
