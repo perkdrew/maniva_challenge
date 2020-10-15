@@ -6,7 +6,7 @@
 !(function($) {
   "use strict";
 
-  $('form.django-email-form').submit(function(e) {
+  $('form.php-email-form').submit(function(e) {
     e.preventDefault();
     
     var f = $(this).find('.form-group'),
@@ -112,18 +112,18 @@
     if ( $(this).data('recaptcha-site-key') ) {
       var recaptcha_site_key = $(this).data('recaptcha-site-key');
       grecaptcha.ready(function() {
-        grecaptcha.execute(recaptcha_site_key, {action: 'django_email_form_submit'}).then(function(token) {
-          django_email_form_submit(this_form,action,this_form.serialize() + '&recaptcha-response=' + token);
+        grecaptcha.execute(recaptcha_site_key, {action: 'php_email_form_submit'}).then(function(token) {
+          php_email_form_submit(this_form,action,this_form.serialize() + '&recaptcha-response=' + token);
         });
       });
     } else {
-      django_email_form_submit(this_form,action,this_form.serialize());
+      php_email_form_submit(this_form,action,this_form.serialize());
     }
     
     return true;
   });
 
-  function django_email_form_submit(this_form, action, data) {
+  function php_email_form_submit(this_form, action, data) {
     $.ajax({
       type: "POST",
       url: action,
