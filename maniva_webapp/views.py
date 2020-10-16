@@ -21,7 +21,6 @@ def post(request):
         print(request.POST)
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.
             form.save()
             gen_mail = ('Thanks for reaching out!', 
                         'We appreciate you contacting us and hope to make your digital transfer as smoothly as possible.',
