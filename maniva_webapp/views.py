@@ -17,19 +17,25 @@ def get(request):
     return render(request, self.template_name, args)
 
 def post(request):
-    if request.method == 'POST':
-        print(request.POST)
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            gen_mail = ('Thanks for reaching out!', 
-                        'We appreciate you contacting us and hope to make your digital transfer as smoothly as possible.',
-                        [form['email']])
-            send_mass_mail((gen_mail), fail_silently=False)
-            form = forms.ContactForm()
-            return redirect("index")
+    form = ContactForm(request.POST)
+    if form.is_valid():
+        form.save()
+        send_email(request)
+        form = forms.ContactForm()
+        return redirect('index')
     args = {'form':form}
     return render(request, self.template_name, args)
+
+def send_email(request):
+    subject = request.POST.get('subject', '')
+    message = request.POST.get('message', '')
+    from_email = request.POST.get('from_email', '')
+    if subject and message and from_email:
+        send_mass_mail(subject, message, from_email, ['admin@example.com'])
+        return redirect('index')
+
+def push_notifications(request):
+    pass
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

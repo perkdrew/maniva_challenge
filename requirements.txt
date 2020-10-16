@@ -1,20 +1,19 @@
 aiohttp==3.6.3
-appnope @ file:///opt/concourse/worker/volumes/live/0291c9e1-4b15-459f-623e-2770f55be269/volume/appnope_1594338395037/work
-argon2-cffi @ file:///opt/concourse/worker/volumes/live/59af29ac-4890-416e-7ab7-794f8d6f7ecd/volume/argon2-cffi_1596828548321/work
-asgiref @ file:///tmp/build/80754af9/asgiref_1594338739818/work
+appnope 
+asgiref 
 async-generator==1.10
 async-timeout==3.0.1
-attrs @ file:///tmp/build/80754af9/attrs_1600298409949/work
+attrs 
 backcall==0.2.0
 backports.functools-lru-cache==1.6.1
-bleach @ file:///tmp/build/80754af9/bleach_1600439572647/work
+bleach 
 brotlipy==0.7.0
 certifi==2020.6.20
-cffi @ file:///opt/concourse/worker/volumes/live/b9607b09-b777-4ff7-53dc-287727eb8574/volume/cffi_1600699191154/work
+cffi
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.3
-cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography_1600960179663/work
+cryptography 
 decorator==4.4.2
 defusedxml==0.6.0
 Django==3.0.5
@@ -22,69 +21,60 @@ django-bootstrap4==1.1.1
 django-countries==6.1.3
 django-crispy-forms==1.8.1
 django-instapush==1.0.4
-djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1601312268278/work
+djangorestframework 
 djongo==1.3.3
 entrypoints==0.3
 Flask==1.1.2
 geoip2==4.1.0
 http-ece==1.1.0
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1593328102638/work
-importlib-metadata @ file:///tmp/build/80754af9/importlib-metadata_1602276842396/work
-ipykernel @ file:///opt/concourse/worker/volumes/live/88f541d3-5a27-498f-7391-f2e50ca36560/volume/ipykernel_1596206680118/work/dist/ipykernel-5.3.4-py3-none-any.whl
-ipython @ file:///opt/concourse/worker/volumes/live/90527372-a5f7-4d48-68c2-a99de2ba31c7/volume/ipython_1599056199422/work
+idna
+importlib-metadata 
+ipykernel 
+ipython 
 ipython-genutils==0.2.0
-ipywidgets @ file:///tmp/build/80754af9/ipywidgets_1601490159889/work
+ipywidgets 
 itsdangerous==1.1.0
-jedi @ file:///opt/concourse/worker/volumes/live/c63c70ef-654a-4d26-6b78-37aef096f225/volume/jedi_1596490811751/work
+jedi 
 Jinja2==2.11.2
-jsonschema @ file:///tmp/build/80754af9/jsonschema_1602607155483/work
-jupyter==1.0.0
-jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1601311786391/work
-jupyter-console @ file:///tmp/build/80754af9/jupyter_console_1598884538475/work
-jupyter-core==4.6.3
-jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_1601490720602/work
-MarkupSafe @ file:///opt/concourse/worker/volumes/live/cb778296-98db-45ad-411e-6f726e102dc3/volume/markupsafe_1594371638608/work
+jsonschema 
+MarkupSafe 
 maxminddb==2.0.2
-mistune @ file:///opt/concourse/worker/volumes/live/95802d64-d39c-491b-74ce-b9326880ca54/volume/mistune_1594373201816/work
+mistune 
 mkl-fft==1.1.0
 mkl-random==1.1.1
 mkl-service==2.3.0
-mongoengine @ file:///Users/runner/miniforge3/conda-bld/mongoengine_1602545586417/work
+mongoengine 
 multidict==4.7.6
-nbclient @ file:///tmp/build/80754af9/nbclient_1602783176460/work
-nbconvert @ file:///opt/concourse/worker/volumes/live/2b9c1d93-d0fd-432f-7d93-66c93d81b614/volume/nbconvert_1601914875037/work
-nbformat @ file:///tmp/build/80754af9/nbformat_1602783287752/work
-neo4j @ file:///home/conda/feedstock_root/build_artifacts/neo4j-python-driver_1598572243813/work
-neobolt @ file:///Users/runner/miniforge3/conda-bld/neobolt_1602394628065/work
+nbclient 
+nbconvert 
+nbformat 
 neotime==1.7.4
-nest-asyncio @ file:///tmp/build/80754af9/nest-asyncio_1601499549014/work
-notebook @ file:///opt/concourse/worker/volumes/live/be0f3504-189d-4bae-4e57-c5d6da73ffcd/volume/notebook_1601501605350/work
-numpy @ file:///opt/concourse/worker/volumes/live/c646f6b9-b398-438d-7dc7-c7142e0ba44b/volume/numpy_and_numpy_base_1596235504536/work
+nest-asyncio 
+notebook 
+numpy 
 packaging==20.4
-pandas @ file:///opt/concourse/worker/volumes/live/905bc214-99a7-4c47-6cae-d63a445c9258/volume/pandas_1598371465625/work
+pandas 
 pandocfilters==1.4.2
 parso==0.7.0
-pexpect @ file:///opt/concourse/worker/volumes/live/8701bb20-ad87-46c7-5108-30c178cf97e5/volume/pexpect_1594383388344/work
-pickleshare @ file:///opt/concourse/worker/volumes/live/93ec39d8-05bb-4f84-7efc-98735bc39b70/volume/pickleshare_1594384101884/work
-prometheus-client==0.8.0
-prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1602524994744/work
-psycopg2 @ file:///opt/concourse/worker/volumes/live/c8a4b965-959f-4e6c-7792-4aa881d63c8d/volume/psycopg2_1594305121341/work
+pexpect 
+pickleshare
+prompt-toolkit 
+psycopg2 
 ptyprocess==0.6.0
 py-vapid==1.7.1
 py2neo==4.2.0
-pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
-Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1600347314331/work
+pycparser 
+Pygments
 pymongo==3.11.0
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
-pyrsistent @ file:///opt/concourse/worker/volumes/live/ff11f3f0-615b-4508-471d-4d9f19fa6657/volume/pyrsistent_1600141727281/work
-PySocks @ file:///Users/runner/miniforge3/conda-bld/pysocks_1602326916036/work
+pyrsistent 
+PySocks 
 python-dateutil==2.8.1
 pytz==2020.1
 pywebpush==1.9.4
 pyzmq==19.0.2
-qtconsole @ file:///tmp/build/80754af9/qtconsole_1600870028330/work
-QtPy==1.9.0
+qtconsole 
 requests==2.24.0
 requests-toolbelt==0.9.1
 Send2Trash==1.5.0
@@ -93,11 +83,11 @@ sqlparse==0.2.4
 terminado==0.9.1
 testpath==0.4.4
 tornado==6.0.4
-traitlets @ file:///tmp/build/80754af9/traitlets_1602787416690/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1595434816409/work
-wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1600965781394/work
+traitlets 
+urllib3 
+wcwidth
 webencodings==0.5.1
 Werkzeug==1.0.1
 widgetsnbextension==3.5.1
 yarl==1.5.1
-zipp @ file:///tmp/build/80754af9/zipp_1602002379921/work
+zipp 
