@@ -8,7 +8,6 @@ from . import forms, views, models
 class HomePageView(TemplateView):
     template_name='index.html'
 
-
 ## FORMS 
 # HTTP Methods
 def get(request):

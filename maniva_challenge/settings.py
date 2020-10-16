@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_countries',
-    'webpush',
     'maniva_webapp',
 ]
 
@@ -124,3 +123,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Web push
+'''INSTAPUSH_SETTINGS = {
+    'DEVICE_OWNER_MODEL': 'accounts.models.UserAccount',
+    'GCM_SETTINGS': {
+        'API_KEY': SECRET_KEY
+    },
+    'APNS_SETTINGS': {
+        'APNS_CERTIFICATE': os.path.join(PROJECT_ROOT, 'keys/apns_sandbox.pem')
+    }
+}'''
