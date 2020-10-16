@@ -22,8 +22,5 @@ class Consultation(models.Model):
     def __str__(self):
         return self.title, self.description, self.client_name
 
-class LocationExpression(models.Model):
-    pass
-
 
 

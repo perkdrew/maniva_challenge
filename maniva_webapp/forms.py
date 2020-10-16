@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Contact, Consultation
+from maniva_webapp.models import Contact, Consultation
 
 class ContactForm(forms.ModelForm):
     class Meta:
