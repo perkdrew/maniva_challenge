@@ -1,14 +1,8 @@
-import pymongo
-import os
-
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.core.mail import send_mass_mail
 from . import forms, views, models
-
-user = os.environ.get('myUserAdmin')
-password = os.environ.get('abc123')
-client = pymongo.MongoClient(f'mongodb+srv://{user}:{password}@cluster0-ysglw.mongodb.net/')
 
 ## HOMEPAGE TEMPLATE
 class HomePageView(TemplateView):
@@ -28,6 +22,10 @@ def post(request):
         form = forms.ContactForm(request.POST)
         if form.is_valid():
             form.save()
+            gen_mail = ('Thanks for reaching out!', 
+                        'We appreciate you contacting us and hope to make your digital transfer as smoothly as possible.',
+                        [form['email']])
+            send_mass_mail((gen_mail), fail_silently=False)
             form = forms.ContactForm()
             return redirect("index")
     args = {'form':form}
