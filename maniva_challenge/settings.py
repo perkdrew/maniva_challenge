@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '3+c6i#6)5ct_oid3wafhyc(s5+sm5$j3iw@ny+z40da8ls(7v9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*'
@@ -82,7 +82,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'maniva_db',
-        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost:27017'
+        }
     }
 }
 
@@ -125,11 +127,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Geolocation
-GEOIP_PATH = os.path.join(BASE_DIR, 'geoip/')
+#GEOIP_PATH = os.path.join(BASE_DIR, '/geoip/')
 
 # Email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp-django@hushmail.com'
+EMAIL_HOST = 'smtp-django.hushmail.com'
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'werdperk@outlook.com'
 #EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True

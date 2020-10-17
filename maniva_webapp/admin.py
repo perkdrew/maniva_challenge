@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact, Consultation
+from maniva_webapp.models import Contact, Consultation
 
 admin.site.register(Contact)
 admin.site.register(Consultation)
