@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from maniva_webapp import views
 
 urlpatterns = [
     path('', views.HomePageView.as_view(),name='index'),
-    path('contact/', views.post),
+    path('contact/', views.manage_contacts),
 ]
