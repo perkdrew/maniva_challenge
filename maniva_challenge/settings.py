@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '3+c6i#6)5ct_oid3wafhyc(s5+sm5$j3iw@ny+z40da8ls(7v9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*'
@@ -81,10 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'NAME': 'maniva_db',
+        'ENFORCE_SCHEMA': False,
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -124,13 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # Web push
-'''INSTAPUSH_SETTINGS = {
-    'DEVICE_OWNER_MODEL': 'accounts.models.UserAccount',
-    'GCM_SETTINGS': {
-        'API_KEY': SECRET_KEY
-    },
-    'APNS_SETTINGS': {
-        'APNS_CERTIFICATE': os.path.join(PROJECT_ROOT, 'keys/apns_sandbox.pem')
-    }
-}'''

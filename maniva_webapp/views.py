@@ -21,6 +21,7 @@ def post(request):
     if form.is_valid():
         form.save()
         send_email(request)
+        push_notifications(request)
         form = forms.ContactForm()
         return redirect('index')
     args = {'form':form}
@@ -31,7 +32,7 @@ def send_email(request):
     message = request.POST.get('message', '')
     from_email = request.POST.get('from_email', '')
     if subject and message and from_email:
-        send_mass_mail(subject, message, from_email, ['admin@example.com'])
+        send_mass_mail(subject, message, from_email, ['werdperk@outlook.com'])
         return redirect('index')
 
 def push_notifications(request):

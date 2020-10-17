@@ -5,9 +5,10 @@ from maniva_webapp.models import Contact, Consultation
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
-        fields = '__all__'
+        model.country = g.
+        fields = ['name','email','subject','message']
 
 class ConsultationForm(forms.ModelForm):
     class Meta:
         model = Consultation
-        fields = '__all__'
+        fields = 'name','email','subject','message']
