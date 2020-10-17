@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import ModelForm
-from django.contrib.gis.geoip2 import GeoIP2 as g
 from maniva_webapp.models import Contact, Consultation
 
 class ContactForm(forms.ModelForm):

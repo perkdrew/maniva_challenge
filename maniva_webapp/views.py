@@ -1,8 +1,11 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
+#from django.contrib.gis.geoip2 import GeoIP2
 from django.core.mail import send_mass_mail
 from maniva_webapp.forms import ContactForm
+
+#g = GeoIP2()
 
 ## HOMEPAGE TEMPLATE
 class HomePageView(TemplateView):
@@ -16,8 +19,9 @@ def manage_contacts(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            location = g.city(get_client_loc(request))
-            form.cleaned_data['country'] = location
+            ip = get_client_loc(request)
+            #location = g.country(str(ip))
+            form.cleaned_data['country'] = ip
             form.save()
             send_email(request)
             push_notifications(request)
@@ -31,8 +35,7 @@ def get_client_loc(request):
         ip = x_forwarded_for.split(',')[0]
     else:
         ip = request.META.get('REMOTE_ADDR')
-    location = g.city(ip)
-    return loc
+    return ip
 
 def send_email(request):
     send_mass_mail("Hello from Maniva Digital", 
