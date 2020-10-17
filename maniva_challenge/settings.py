@@ -10,8 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-import os.path
+import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3+c6i#6)5ct_oid3wafhyc(s5+sm5$j3iw@ny+z40da8ls(7v9'
+SECRET_KEY = config('KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*'
@@ -126,14 +127,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#Geolocation
-#GEOIP_PATH = os.path.join(BASE_DIR, '/geoip/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
-# Email
-EMAIL_HOST = 'smtp-django.hushmail.com'
+# Email settings
+EMAIL_HOST = 'smtp.hushmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'werdperk@outlook.com'
-#EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_USER = 'smtp-django@hushmail.com'
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST')
+
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 

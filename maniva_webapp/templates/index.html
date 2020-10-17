@@ -15,7 +15,7 @@
   <link href="{% static 'assets/img/maniva_logo.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -305,6 +305,13 @@
     <section id="contact" class="contact">
       <div class="container">
 
+      {% if form %}
+
+      <h2>Thanks {{ form.name }}!</h2>
+      <p>We received your email and will respond shortly...</p>
+  
+      {% else %}
+
         <div class="section-title">
           <h2>Contact</h2>
           <p>Get in touch with us to find out how our services can benefit your company.</p>
@@ -371,7 +378,6 @@
               </div>
               <div class="mb-3">
                 <div class="loading">Loading</div>
-                <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
@@ -382,7 +388,10 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+
+    </section>
+    {% endif %}
+    <!-- End Contact Section -->
 
   </main><!-- End #main -->
 

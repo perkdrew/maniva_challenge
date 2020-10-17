@@ -1,5 +1,4 @@
 from django.forms import ModelForm
-from django_countries.fields import CountryField
 from djongo import models
 
 class Contact(models.Model):
@@ -7,7 +6,6 @@ class Contact(models.Model):
     email = models.EmailField(verbose_name="Email", null=True, default=None, blank=True)
     subject = models.CharField(max_length=50, verbose_name="Subject")
     message = models.TextField(verbose_name="Message")
-    country = CountryField(blank=True)
     objects = models.DjongoManager()
 
     def __str__(self):
