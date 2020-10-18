@@ -1,4 +1,5 @@
 from django.apps import AppConfig
 
+
 class ManivaWebappConfig(AppConfig):
-    name = 'maniva_webapp'
+    name = "maniva_webapp"
