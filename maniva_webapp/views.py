@@ -22,10 +22,12 @@ def manage_contacts(request):
         if form.is_valid():
             ip = get_client_ip(request)
             form.save()
-            send_email(request)
+            print(form.cleaned_data["email"])
+            curr_email = form.instance.email
+            send_email(request, curr_email)
             push_notifications(request)
             form = ContactForm()
-    return render(request, self.template_name, {"form": form})
+    return render(request, "index.html", {"form": form})
 
 
 def get_client_ip(request):
@@ -37,16 +39,15 @@ def get_client_ip(request):
     return ip
 
 
-def send_email(request):
-    form = ContactForm()
+def send_email(request, curr_email):
     send_mail(
         "Hello from Maniva Digital",
         "Let's get started with your digital transformation!",
         "werdperk@outlook.com",
-        [form],
+        [curr_email],
         fail_silently=False,
     )
-    return render(request, self.template_name, {"form": form})
+    return render(request, "index.html", {"email": curr_email})
 
 
 def push_notifications(request):
