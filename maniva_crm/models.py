@@ -1,7 +1,7 @@
 from djongo import models
 
 
-class User(models.Model):
+class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)

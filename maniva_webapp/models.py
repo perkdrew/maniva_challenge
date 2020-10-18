@@ -1,5 +1,5 @@
-from django.forms import ModelForm
 from djongo import models
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=50, verbose_name="Name")
@@ -11,6 +11,7 @@ class Contact(models.Model):
     def __str__(self):
         return self.name, self.email, self.subject, self.message
 
+
 class Consultation(models.Model):
     title = models.CharField(max_length=50, verbose_name="Title")
     description = models.TextField()
@@ -19,6 +20,3 @@ class Consultation(models.Model):
 
     def __str__(self):
         return self.title, self.description, self.client_name
-
-
-

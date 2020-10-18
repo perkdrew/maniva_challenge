@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django_countries",
+    # "django_filters",
     "maniva_webapp",
+    # "maniva_crm",
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,6 @@ EMAIL_HOST = "smtp.hushmail.com"
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "smtp-django@hushmail.com"
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST")
-
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
