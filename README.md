@@ -6,6 +6,7 @@ Tech Stack:
 * Python
   * Django
   * Scikit-Learn
+  * Libra
 * Bootstrap 
   * HTML
   * CSS
