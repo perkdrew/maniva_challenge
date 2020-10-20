@@ -19,5 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("maniva_webapp.urls")),
-    # path("", include("maniva_crm.urls")),
+    path("", include("maniva_crm.urls")),
 ]

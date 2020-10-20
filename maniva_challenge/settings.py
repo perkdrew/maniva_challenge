@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "django_filters",
+    "django_extensions",
+    "django_filters",
     "maniva_webapp",
-    # "maniva_crm",
+    "maniva_crm",
 ]
 
 MIDDLEWARE = [
