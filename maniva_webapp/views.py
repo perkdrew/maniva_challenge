@@ -10,7 +10,7 @@ from maniva_webapp.forms import ContactForm
 
 ## HOMEPAGE TEMPLATE
 class HomePageView(TemplateView):
-    template_name = "index.html"
+    template_name = "webapp_index.html"
 
 
 # Site functions
@@ -27,7 +27,7 @@ def manage_contacts(request):
             send_email(request, curr_email)
             push_notifications(request)
             form = ContactForm()
-    return render(request, "index.html", {"form": form})
+    return render(request, "webapp_index.html", {"form": form})
 
 
 def get_client_ip(request):
@@ -47,7 +47,7 @@ def send_email(request, curr_email):
         [curr_email],
         fail_silently=False,
     )
-    return render(request, "index.html", {"email": curr_email})
+    return render(request, "webapp_index.html", {"email": curr_email})
 
 
 def push_notifications(request):

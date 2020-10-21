@@ -33,4 +33,4 @@ class Service(models.Model):
     objects = models.DjongoManager()
 
     def __str__(self):
-        return self.product.name
+        return self.note

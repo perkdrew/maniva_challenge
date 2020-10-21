@@ -54,13 +54,13 @@ def home(request):
     services = Service.objects.all()
     customers = Customer.objects.all()
     total_customers = customers.count()
-    total_services = services.count()
+    total_orders = services.count()
     delivered = services.filter(status="Delivered").count()
     pending = services.filter(status="Pending").count()
     context = {
         "services": services,
         "customers": customers,
-        "total_services": total_services,
+        "total_orders": total_orders,
         "delivered": delivered,
         "pending": pending,
     }
@@ -74,10 +74,10 @@ def userPage(request):
 
 @login_required(login_url="login")
 @allowed_users(allowed_roles=["admin"])
-def products(request):
-    products = Product.objects.all()
+def services(request):
+    services = Service.objects.all()
 
-    return render(request, "products.html", {"products": products})
+    return render(request, "services.html", {"services": services})
 
 
 @login_required(login_url="login")
@@ -101,7 +101,7 @@ def customer(request, pk_test):
 @allowed_users(allowed_roles=["admin"])
 def createServiceOrder(request, pk):
     ServiceFormSet = inlineformset_factory(
-        Customer, Service, fields=("product", "status"), extra=10
+        Customer, Service, fields=("service", "status"), extra=10
     )
     customer = Customer.objects.get(id=pk)
     formset = ServiceFormSet(queryset=Service.objects.none(), instance=customer)
@@ -137,5 +137,5 @@ def deleteServiceOrder(request, pk):
         service.delete()
         return redirect("/")
 
-    context = {"item": service}
+    context = {"service": service}
     return render(request, "delete.html", context)
