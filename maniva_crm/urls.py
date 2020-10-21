@@ -10,7 +10,7 @@ urlpatterns = [
     path("crm/user/", views.userPage, name="user-page"),
     path("crm/services/", views.services, name="services"),
     path("crm/customer/<str:pk_test>/", views.customer, name="customer"),
-    path("crm/create_order/<str:pk>/", views.createServiceOrder, name="create_order"),
-    path("crm/update_order/<str:pk>/", views.updateServiceOrder, name="update_order"),
-    path("crm/delete_order/<str:pk>/", views.deleteServiceOrder, name="delete_order"),
+    path("crm/create_order/<str:pk>/", views.createOrder, name="create_order"),
+    path("crm/update_order/<str:pk>/", views.updateOrder, name="update_order"),
+    path("crm/delete_order/<str:pk>/", views.deleteOrder, name="delete_order"),
 ]
