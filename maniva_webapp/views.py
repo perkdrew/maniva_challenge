@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.mail import send_mail
+from maniva_challenge.settings import EMAIL_HOST_USER
 from maniva_webapp.forms import ContactForm
 
 # from django.contrib.gis.geoip2 import GeoIP2
@@ -22,7 +23,6 @@ def manage_contacts(request):
         if form.is_valid():
             ip = get_client_ip(request)
             form.save()
-            print(form.cleaned_data["email"])
             curr_email = form.instance.email
             send_email(request, curr_email)
             push_notifications(request)
@@ -40,10 +40,11 @@ def get_client_ip(request):
 
 
 def send_email(request, curr_email):
+    print("Sending email to", curr_email)
     send_mail(
-        "Hello from Maniva Digital",
+        "Hello from Maniva Digital!",
         "Let's get started with your digital transformation!",
-        "werdperk@outlook.com",
+        EMAIL_HOST_USER,
         [curr_email],
         fail_silently=False,
     )
