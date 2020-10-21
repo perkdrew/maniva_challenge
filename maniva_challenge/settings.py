@@ -83,6 +83,7 @@ DATABASES = {
     "default": {
         "ENGINE": "djongo",
         "NAME": "maniva_db",
+        "ENFORCE_SCHEMA": False,
         "CLIENT": {"host": "localhost:27017"},
     }
 }

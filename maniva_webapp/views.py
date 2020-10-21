@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
 from django.core.mail import send_mail
 from maniva_challenge.settings import EMAIL_HOST_USER
 from maniva_webapp.forms import ContactForm
@@ -9,12 +10,11 @@ from maniva_webapp.forms import ContactForm
 # g = GeoIP2()
 
 
-## HOMEPAGE TEMPLATE
 class HomePageView(TemplateView):
     template_name = "webapp_index.html"
 
 
-# Site functions
+@csrf_exempt
 def manage_contacts(request):
     if request.method == "GET":
         form = ContactForm()
